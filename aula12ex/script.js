@@ -3,7 +3,13 @@ function carregar() {
     var img = window.document.getElementById("imagem");
     var data = new Date();
     var hora = data.getHours();
-    msg.innerHTML = `Agora são ${horas}.`;
+    var minutos = data.getMinutes();
+    msg.innerHTML = `Agora são ${hora} horas e ${minutos} minutos.`;
+
+    // Falar as horas e minutos
+    var fala = new SpeechSynthesisUtterance(`Agora são ${hora} horas e ${minutos} minutos.`);
+    window.speechSynthesis.speak(fala);
+
     if (hora >= 0 && hora < 12) {
         // BOM DIA
         img.src = "imagens/manha.png";
