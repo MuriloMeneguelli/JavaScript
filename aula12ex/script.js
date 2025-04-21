@@ -3,8 +3,7 @@ function carregar() {
     var img = window.document.getElementById("imagem");
     var data = new Date();
     var hora = data.getHours();
-    var minutos = data.getMinutes();
-    msg.innerHTML = `Agora são ${hora}:${minutos < 10 ? '0' + minutos : minutos}.`;
+    msg.innerHTML = `Agora são ${horas}.`;
     if (hora >= 0 && hora < 12) {
         // BOM DIA
         img.src = "imagens/manha.png";
